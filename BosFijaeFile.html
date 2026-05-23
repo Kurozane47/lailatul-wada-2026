@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lailatul Wada' 2026 — Sponsorship Eksklusif | PPTQ Ibnu Abbas Klaten</title>
+<meta name="description" content="Bergabunglah sebagai mitra strategis Lailatul Wada' 2026 PPTQ Ibnu Abbas Klaten. 700+ santri, ribuan penonton digital. Pilih paket sponsorship Anda!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=DM+Sans:wght@300;400;500;600&family=Lalezar&display=swap" rel="stylesheet">
+<style>
+/* ═══════════ TOKENS ═══════════ */
+:root {
+  --ink:       #06100e;
+  --ink2:      #091814;
+  --ink3:      #0c1e1a;
+  --surface:   rgba(255,255,255,0.028);
+  --line:      rgba(255,255,255,0.065);
+  --jade:      #2fe89a;
+  --jade-dim:  #1a7a4e;
+  --jade-glow: rgba(47,232,154,0.15);
+  --gold:      #f0d060;
+  --gold-dim:  #a07820;
+  --amber:     #f5a830;
+  --sapphire:  #60c0f8;
+  --violet:    #c0a8ff;
+  --rose:      #ff8090;
+  --text:      #eef4f0;
+  --muted:     rgba(238,244,240,0.52);
+  --faint:     rgba(238,244,240,0.28);
+  --serif:     'Cormorant Garamond', Georgia, serif;
+  --sans:      'DM Sans', system-ui, sans-serif;
+  --arabic:    'Lalezar', sans-serif;
+  --ease:      cubic-bezier(0.4, 0, 0.2, 1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--sans);background:var(--ink);color:var(--text);overflow-x:hidden;line-height:1.65}
+
+/* ── noise ── */
+body::after{content:'';position:fixed;inset:0;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events:none;opacity:0.5}
+
+/* ── cursor ── */
+.cursor-dot{position:fixed;top:0;left:0;z-index:9999;width:8px;height:8px;border-radius:50%;background:var(--jade);pointer-events:none;transform:translate(-50%,-50%);transition:transform .1s,width .3s,height .3s,opacity .3s;mix-blend-mode:difference}
+.cursor-ring{position:fixed;top:0;left:0;z-index:9998;width:36px;height:36px;border-radius:50%;border:1px solid rgba(47,232,154,.5);pointer-events:none;transform:translate(-50%,-50%);transition:transform .15s var(--ease),width .3s,height .3s,border-color .3s}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--ink)}
+::-webkit-scrollbar-thumb{background:var(--jade-dim);border-radius:3px}
+
+/* ══════════ NAVBAR ══════════ */
+#nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:0 52px;height:74px;background:rgba(6,16,14,.82);backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid var(--line);transition:all .35s var(--ease)}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.nav-logo-text{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--text);letter-spacing:.3px}
+.nav-logo-text em{color:var(--jade);font-style:normal}
+.nav-menu{display:flex;gap:4px;list-style:none;align-items:center}
+.nav-menu a{font-size:12.5px;font-weight:500;letter-spacing:.4px;color:var(--muted);text-decoration:none;padding:7px 15px;border-radius:40px;transition:all .22s}
+.nav-menu a:hover{color:var(--jade);background:var(--jade-glow)}
+.nav-cta-btn{background:linear-gradient(135deg,var(--jade),var(--jade-dim))!important;color:var(--ink)!important;font-weight:700!important;box-shadow:0 0 24px var(--jade-glow)}
+.nav-cta-btn:hover{transform:translateY(-2px);box-shadow:0 4px 32px rgba(47,232,154,.45)!important}
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-burger span{width:22px;height:2px;background:var(--text);border-radius:2px;transition:all .3s}
+
+/* progress bar */
+#readProgress{position:fixed;top:74px;left:0;z-index:499;height:2px;width:0%;background:linear-gradient(90deg,var(--jade),var(--gold),var(--violet));transition:width .1s;box-shadow:0 0 8px rgba(47,232,154,.5)}
+
+/* ══════════ HERO ══════════ */
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:120px 24px 80px}
+.hero-canvas{position:absolute;inset:0;z-index:0}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+.orb-1{width:700px;height:700px;background:radial-gradient(circle,rgba(47,232,154,.13) 0%,transparent 70%);top:-10%;left:-18%;animation:orbFloat 18s ease-in-out infinite}
+.orb-2{width:600px;height:600px;background:radial-gradient(circle,rgba(192,168,255,.11) 0%,transparent 70%);bottom:-10%;right:-12%;animation:orbFloat 22s ease-in-out infinite reverse}
+.orb-3{width:400px;height:400px;background:radial-gradient(circle,rgba(240,208,96,.08) 0%,transparent 70%);top:40%;left:50%;transform:translate(-50%,-50%);animation:orbFloat 15s ease-in-out infinite 5s}
+.orb-4{width:250px;height:250px;background:radial-gradient(circle,rgba(96,192,248,.07) 0%,transparent 70%);top:20%;right:15%;animation:orbFloat 20s ease-in-out infinite 8s}
+@keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-40px) scale(1.05)}66%{transform:translate(-20px,20px) scale(.97)}}
+.hero-grid{position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(47,232,154,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(47,232,154,.025) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 0%,transparent 100%)}
+#particleCanvas{position:absolute;inset:0;z-index:1;pointer-events:none}
+
+/* hero aurora rings */
+.hero-aurora{position:absolute;inset:0;z-index:0;pointer-events:none}
+.aurora-ring{position:absolute;border-radius:50%;border:1px solid;top:50%;left:50%;animation:auroraExpand 8s ease-out infinite}
+.aurora-ring:nth-child(1){width:300px;height:300px;margin:-150px 0 0 -150px;border-color:rgba(47,232,154,.06);animation-delay:0s}
+.aurora-ring:nth-child(2){width:550px;height:550px;margin:-275px 0 0 -275px;border-color:rgba(240,208,96,.04);animation-delay:2s}
+.aurora-ring:nth-child(3){width:800px;height:800px;margin:-400px 0 0 -400px;border-color:rgba(192,168,255,.03);animation-delay:4s}
+.aurora-ring:nth-child(4){width:1100px;height:1100px;margin:-550px 0 0 -550px;border-color:rgba(47,232,154,.02);animation-delay:6s}
+@keyframes auroraExpand{0%{opacity:0;transform:scale(.6)}30%{opacity:1}100%{opacity:0;transform:scale(1.3)}}
+
+.hero-content{position:relative;z-index:5;max-width:960px}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;padding:9px 22px;border-radius:40px;border:1px solid rgba(47,232,154,.3);background:rgba(47,232,154,.06);font-size:10.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--jade);margin-bottom:36px;animation:fadeUp .9s var(--ease) both}
+.hero-badge::before,.hero-badge::after{content:'◆';font-size:6px;color:var(--jade);opacity:.7}
+.hero-arabic{font-family:var(--arabic);font-size:clamp(62px,11vw,130px);line-height:1.25;background:linear-gradient(135deg,var(--jade) 0%,#90ffcc 30%,var(--gold) 65%,var(--amber) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:fadeUp .9s var(--ease) .12s both;display:block;margin-bottom:6px;text-shadow:none;filter:drop-shadow(0 0 40px rgba(47,232,154,.25))}
+.hero-title{font-family:var(--serif);font-size:clamp(30px,5.5vw,62px);font-weight:300;letter-spacing:3px;text-transform:uppercase;color:var(--text);line-height:1.1;animation:fadeUp .9s var(--ease) .2s both;margin-bottom:18px}
+.hero-title strong{font-weight:700}
+.hero-tagline{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(18px,2.8vw,28px);color:var(--muted);animation:fadeUp .9s var(--ease) .28s both;margin-bottom:6px}
+.hero-motto{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);font-weight:500;animation:fadeUp .9s var(--ease) .34s both;margin-bottom:48px;opacity:.8}
+.hero-pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:52px;animation:fadeUp .9s var(--ease) .4s both}
+.hero-pill{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:40px;padding:9px 18px;font-size:12.5px;color:rgba(255,255,255,.72);backdrop-filter:blur(10px);transition:all .25s}
+.hero-pill:hover{border-color:rgba(47,232,154,.25);color:var(--jade);transform:translateY(-2px)}
+.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fadeUp .9s var(--ease) .48s both}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--jade),var(--jade-dim));color:var(--ink);font-weight:700;font-size:14px;padding:16px 38px;border-radius:50px;text-decoration:none;box-shadow:0 8px 40px rgba(47,232,154,.3),inset 0 1px 0 rgba(255,255,255,.2);transition:all .3s var(--ease);position:relative;overflow:hidden}
+.btn-primary::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.15),transparent);opacity:0;transition:opacity .3s}
+.btn-primary:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 16px 50px rgba(47,232,154,.5)}
+.btn-primary:hover::before{opacity:1}
+.btn-outline{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.16);color:var(--text);font-weight:500;font-size:14px;padding:16px 38px;border-radius:50px;text-decoration:none;backdrop-filter:blur(10px);transition:all .3s var(--ease)}
+.btn-outline:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.3);transform:translateY(-2px)}
+.hero-scroll-hint{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;animation:fadeUp 1s var(--ease) 1.4s both;opacity:.5}
+.scroll-label{font-size:9.5px;letter-spacing:4px;text-transform:uppercase;color:var(--muted)}
+.scroll-mouse{width:22px;height:36px;border:1.5px solid rgba(255,255,255,.25);border-radius:12px;position:relative;display:flex;justify-content:center;padding-top:6px}
+.scroll-wheel{width:3px;height:8px;background:var(--jade);border-radius:2px;animation:scrollWheel 2s ease-in-out infinite}
+@keyframes scrollWheel{0%,100%{opacity:1;transform:translateY(0)}50%{opacity:.3;transform:translateY(8px)}}
+
+/* ══════════ MARQUEE ══════════ */
+.marquee-wrap{overflow:hidden;background:linear-gradient(135deg,rgba(47,232,154,.06),rgba(240,208,96,.04));border-top:1px solid rgba(47,232,154,.12);border-bottom:1px solid rgba(240,208,96,.1);padding:16px 0;position:relative}
+.marquee-wrap::before,.marquee-wrap::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+.marquee-wrap::before{left:0;background:linear-gradient(90deg,var(--ink),transparent)}
+.marquee-wrap::after{right:0;background:linear-gradient(270deg,var(--ink),transparent)}
+.marquee-inner{display:flex;gap:48px;animation:marquee 25s linear infinite;width:max-content}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.m-item{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--jade);white-space:nowrap}
+.m-item span{color:var(--text);font-weight:500}
+.m-sep{color:var(--gold);font-size:16px;opacity:.6}
+
+/* ══════════ SECTION BASE ══════════ */
+section{padding:110px 24px;position:relative}
+.wrap{max-width:1140px;margin:0 auto}
+.chip{display:inline-flex;align-items:center;gap:8px;font-size:10.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--jade);margin-bottom:16px}
+.chip::before{content:'';width:24px;height:1px;background:linear-gradient(90deg,var(--jade),transparent)}
+.sec-h2{font-family:var(--serif);font-size:clamp(32px,5.5vw,56px);font-weight:300;line-height:1.12;margin-bottom:18px}
+.sec-lead{font-size:15.5px;color:var(--muted);max-width:620px;line-height:1.85}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(47,232,154,.2),rgba(240,208,96,.15),transparent)}
+.glow-line{height:1px;background:linear-gradient(90deg,transparent,var(--jade),var(--gold),transparent);opacity:.6}
+.ripple-btn{position:relative;overflow:hidden}
+.ripple-btn::after{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background:rgba(255,255,255,.15);transform:translate(-50%,-50%);transition:width .6s,height .6s,opacity .6s;opacity:0}
+.ripple-btn:active::after{width:400px;height:400px;opacity:0}
+
+/* ══════════ PPTQ ══════════ */
+#pptq{background:linear-gradient(180deg,var(--ink) 0%,var(--ink2) 100%)}
+.pptq-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:64px}
+.pptq-text p{font-size:15.5px;line-height:2;color:rgba(238,244,240,.7);margin-bottom:20px}
+.blockquote{border-left:3px solid var(--jade);padding:20px 28px;background:linear-gradient(90deg,rgba(47,232,154,.06),transparent);border-radius:0 16px 16px 0;font-family:var(--serif);font-style:italic;font-size:19px;color:rgba(238,244,240,.88);margin:28px 0;line-height:1.7;position:relative}
+.blockquote::before{content:'"';position:absolute;top:-10px;left:18px;font-size:60px;color:var(--jade);opacity:.25;font-family:Georgia,serif;line-height:1}
+.blockquote cite{display:block;margin-top:12px;font-size:13px;color:var(--jade);font-style:normal;font-family:var(--sans);font-weight:600}
+.fact-stack{display:flex;flex-direction:column;gap:14px}
+.fact-card{display:flex;align-items:center;gap:18px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 20px;position:relative;overflow:hidden;transition:all .3s var(--ease)}
+.fact-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--jade),var(--gold));transform:scaleY(0);transform-origin:bottom;transition:transform .35s var(--ease)}
+.fact-card:hover{border-color:rgba(47,232,154,.22);background:rgba(47,232,154,.04);transform:translateX(5px)}
+.fact-card:hover::before{transform:scaleY(1)}
+.fact-ico{font-size:24px;width:48px;height:48px;border-radius:12px;background:rgba(47,232,154,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.fact-body h4{font-size:14.5px;font-weight:600;margin-bottom:3px}
+.fact-body p{font-size:12.5px;color:var(--muted);line-height:1.5}
+
+/* stats */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:64px;background:var(--line);border-radius:24px;overflow:hidden;border:1px solid var(--line)}
+.stat-cell{background:var(--ink2);padding:40px 24px;text-align:center;transition:all .35s var(--ease);position:relative;overflow:hidden}
+.stat-cell::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(47,232,154,.05),transparent 70%);opacity:0;transition:opacity .4s}
+.stat-cell:hover{background:rgba(47,232,154,.04)}
+.stat-cell:hover::before{opacity:1}
+.stat-num{font-family:var(--serif);font-size:56px;font-weight:700;line-height:1;background:linear-gradient(135deg,var(--jade),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;margin-bottom:10px}
+.stat-lbl{font-size:12px;color:var(--muted);line-height:1.5}
+
+/* pillars */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:64px}
+.pillar{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:48px 32px;position:relative;overflow:hidden;transition:all .4s var(--ease)}
+.pillar-num{position:absolute;right:-8px;bottom:-24px;font-family:var(--serif);font-size:120px;font-weight:700;color:rgba(47,232,154,.03);line-height:1;pointer-events:none}
+.pillar:hover{transform:translateY(-12px);border-color:rgba(47,232,154,.3);box-shadow:0 32px 64px rgba(0,0,0,.35),0 0 0 1px rgba(47,232,154,.08)}
+.pillar::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--jade),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.pillar:hover::after{transform:scaleX(1)}
+.pillar-icon{font-size:38px;margin-bottom:18px;display:block}
+.pillar-title{font-family:var(--serif);font-size:22px;font-weight:600;margin-bottom:10px}
+.pillar-desc{font-size:13.5px;color:var(--muted);line-height:1.85;position:relative;z-index:1}
+
+/* ══════════ EVENT ══════════ */
+#event{background:linear-gradient(180deg,var(--ink2) 0%,var(--ink3) 100%)}
+.event-top{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:end;margin-bottom:48px}
+.event-desc p{font-size:15.5px;color:rgba(238,244,240,.74);line-height:1.9;margin-bottom:16px;max-width:700px}
+.event-tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.event-tag{display:flex;align-items:center;gap:7px;border:1px solid rgba(240,208,96,.22);background:rgba(240,208,96,.07);color:var(--gold);font-size:12px;font-weight:600;padding:7px 16px;border-radius:30px;letter-spacing:.4px;transition:all .25s}
+.event-tag:hover{background:rgba(240,208,96,.14);border-color:rgba(240,208,96,.4);transform:translateY(-2px)}
+
+/* countdown */
+.countdown-box{padding:36px;background:var(--surface);border:1px solid rgba(47,232,154,.12);border-radius:28px;text-align:center;min-width:260px;position:relative;overflow:hidden;box-shadow:0 0 60px rgba(47,232,154,.05),inset 0 1px 0 rgba(255,255,255,.05)}
+.countdown-box::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 100%,rgba(47,232,154,.1),transparent 60%);pointer-events:none}
+.countdown-box::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--jade),transparent)}
+.cd-label{font-size:9.5px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:18px;display:block}
+.cd-nums{display:flex;align-items:center;gap:8px;justify-content:center}
+.cd-block{text-align:center}
+.cd-n{font-family:var(--serif);font-size:40px;font-weight:700;color:var(--jade);display:block;line-height:1;text-shadow:0 0 30px rgba(47,232,154,.5)}
+.cd-u{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.cd-sep{font-size:28px;color:var(--line);padding-bottom:12px}
+.cd-seconds{margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.cd-seconds .cd-n{font-size:22px;color:var(--gold)}
+
+/* segments */
+.segments{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+.seg{border-radius:28px;overflow:hidden;position:relative;cursor:default;transition:transform .4s var(--ease);border:1px solid rgba(255,255,255,.07)}
+.seg:hover{transform:translateY(-14px) scale(1.015)}
+.seg-bg{position:absolute;inset:0}
+.seg-bazaar .seg-bg{background:linear-gradient(160deg,#1a0950,#0b0530,#100440)}
+.seg-talk .seg-bg{background:linear-gradient(160deg,#04281e,#021408,#031e18)}
+.seg-malam .seg-bg{background:linear-gradient(160deg,#271400,#130900,#1e1000)}
+.seg-glow{position:absolute;bottom:-50px;left:50%;transform:translateX(-50%);width:240px;height:240px;border-radius:50%;filter:blur(60px);opacity:.4;pointer-events:none;transition:opacity .4s}
+.seg:hover .seg-glow{opacity:.6}
+.seg-bazaar .seg-glow{background:var(--violet)}
+.seg-talk .seg-glow{background:var(--jade)}
+.seg-malam .seg-glow{background:var(--amber)}
+/* top line on hover */
+.seg::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;z-index:3;opacity:0;transition:opacity .4s}
+.seg-bazaar::before{background:linear-gradient(90deg,var(--violet),transparent)}
+.seg-talk::before{background:linear-gradient(90deg,var(--jade),transparent)}
+.seg-malam::before{background:linear-gradient(90deg,var(--amber),transparent)}
+.seg:hover::before{opacity:1}
+.seg-inner{position:relative;z-index:2;padding:48px 34px;min-height:400px;display:flex;flex-direction:column}
+.seg-icon{font-size:50px;margin-bottom:22px}
+.seg-badge{display:inline-block;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:20px;font-weight:600;margin-bottom:14px}
+.seg-bazaar .seg-badge{background:rgba(192,168,255,.15);color:var(--violet)}
+.seg-talk .seg-badge{background:rgba(47,232,154,.15);color:var(--jade)}
+.seg-malam .seg-badge{background:rgba(245,168,48,.15);color:var(--amber)}
+.seg-title{font-family:var(--serif);font-size:28px;font-weight:600;margin-bottom:12px}
+.seg-desc{font-size:14px;color:rgba(255,255,255,.62);line-height:1.85;flex:1}
+.seg-foot{margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.06);font-size:12px;color:rgba(255,255,255,.38);display:flex;align-items:center;gap:6px}
+
+/* timeline */
+.timeline{margin-top:72px;padding:56px;background:var(--surface);border:1px solid var(--line);border-radius:32px;position:relative;overflow:hidden}
+.timeline::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--jade),var(--gold),transparent)}
+.timeline h3{font-family:var(--serif);font-size:32px;font-weight:600;margin-bottom:6px}
+.timeline p{font-size:14px;color:var(--muted);margin-bottom:48px}
+.tl{position:relative;display:flex;flex-direction:column}
+.tl-axis{position:absolute;left:24px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--jade),var(--gold),var(--violet),transparent)}
+.tl-row{display:flex;gap:30px;align-items:flex-start;padding:0 0 40px 64px;position:relative}
+.tl-row:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:0;top:6px;width:48px;height:48px;display:flex;align-items:center;justify-content:center}
+.tl-dot-core{width:14px;height:14px;border-radius:50%;background:var(--jade);box-shadow:0 0 18px rgba(47,232,154,.6)}
+.tl-time{font-size:12px;font-weight:700;letter-spacing:1px;color:var(--jade);min-width:70px;padding-top:2px}
+.tl-body h4{font-size:15.5px;font-weight:600;margin-bottom:5px}
+.tl-body p{font-size:13px;color:var(--muted);line-height:1.65}
+
+/* ══════════ SPONSORSHIP ══════════ */
+#sponsorship{background:linear-gradient(180deg,var(--ink3) 0%,var(--ink) 100%)}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:52px}
+.why-card{display:flex;gap:20px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;transition:all .3s var(--ease);position:relative;overflow:hidden}
+.why-card::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 0% 100%,rgba(47,232,154,.04),transparent 60%);opacity:0;transition:opacity .4s}
+.why-card:hover{border-color:rgba(47,232,154,.22);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.why-card:hover::after{opacity:1}
+.why-ico{width:52px;height:52px;border-radius:14px;background:rgba(47,232,154,.1);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;border:1px solid rgba(47,232,154,.12)}
+.why-text h4{font-size:15.5px;font-weight:600;margin-bottom:7px}
+.why-text p{font-size:13.5px;color:var(--muted);line-height:1.75}
+.pkg-header{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-top:88px;margin-bottom:52px}
+.pkg-header .note{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:14px;padding:14px 20px;max-width:320px;line-height:1.65}
+.pkg-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pkg-row+.pkg-row{margin-top:18px}
+.pkg{background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:34px 28px 30px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:all .4s var(--ease)}
+.pkg::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--pkg-c,var(--jade));transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}
+.pkg:hover::after{transform:scaleX(1)}
+.pkg:hover{transform:translateY(-10px);border-color:rgba(255,255,255,.16);box-shadow:0 32px 70px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.05)}
+.pkg-hot{position:absolute;top:14px;right:14px;font-size:9.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:20px;background:var(--gold);color:var(--ink)}
+.pkg-gem{font-size:32px;margin-bottom:14px;display:block}
+.pkg-name{font-family:var(--serif);font-size:28px;font-weight:700;color:var(--pkg-c,var(--jade));margin-bottom:2px}
+.pkg-tagline{font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.pkg-price{font-family:var(--serif);font-size:32px;font-weight:700;color:var(--pkg-c,var(--jade));margin-bottom:4px;line-height:1}
+.pkg-note{font-size:11.5px;color:var(--faint);margin-bottom:24px}
+.pkg-rule{height:1px;background:var(--line);margin-bottom:22px}
+.pkg-list{list-style:none;flex:1}
+.pkg-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:rgba(238,244,240,.72);padding:5px 0;line-height:1.55}
+.chk{width:18px;height:18px;border-radius:50%;flex-shrink:0;margin-top:1px;background:rgba(47,232,154,.12);color:var(--jade);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700}
+.c-bronze{--pkg-c:#cd7f32}.c-silver{--pkg-c:#b8c8c0}.c-gold{--pkg-c:var(--gold)}.c-plat{--pkg-c:var(--jade)}.c-diamond{--pkg-c:var(--sapphire)}.c-ame{--pkg-c:var(--violet)}
+
+/* exclusive */
+.pkg-utama{margin-top:20px;border-radius:36px;padding:64px 68px;background:linear-gradient(145deg,#0e1e14,#0a1228,#1a0e28);border:1px solid rgba(255,255,255,.1);position:relative;overflow:hidden;transition:transform .4s var(--ease)}
+.pkg-utama:hover{transform:translateY(-6px)}
+.utama-glow{position:absolute;top:-100px;right:-100px;width:500px;height:500px;border-radius:50%;background:conic-gradient(from 0deg,rgba(47,232,154,.07),rgba(240,208,96,.09),rgba(192,168,255,.07),rgba(47,232,154,.07));filter:blur(50px);pointer-events:none;animation:rotateSlow 25s linear infinite}
+.utama-glow-2{position:absolute;bottom:-80px;left:-60px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(47,232,154,.06),transparent 70%);filter:blur(40px);pointer-events:none}
+.utama-glow-3{position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--jade),var(--gold),var(--violet),transparent)}
+@keyframes rotateSlow{to{transform:rotate(360deg)}}
+.utama-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:1}
+.utama-eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;background:linear-gradient(90deg,var(--violet),var(--jade),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px;display:block;font-weight:700}
+.utama-crown{font-size:52px;display:block;margin-bottom:12px}
+.utama-name{font-family:var(--serif);font-size:54px;font-weight:700;background:linear-gradient(135deg,var(--violet) 0%,var(--gold) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:16px;display:block}
+.utama-price{font-family:var(--serif);font-size:22px;font-weight:600;color:rgba(255,255,255,.7)}
+.utama-price small{font-size:14px;color:var(--faint);font-family:var(--sans)}
+.utama-quote{font-family:var(--serif);font-style:italic;font-size:15px;color:rgba(255,255,255,.5);line-height:1.75;border-left:2px solid var(--gold);padding-left:18px;margin-top:20px}
+.utama-list{list-style:none}
+.utama-list li{display:flex;gap:16px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:14.5px;color:rgba(238,244,240,.75);line-height:1.65}
+.utama-list li:last-child{border-bottom:none}
+.utama-ico{font-size:22px;flex-shrink:0;margin-top:1px}
+
+/* comparison table */
+.comp-wrap{margin-top:60px;background:var(--surface);border:1px solid var(--line);border-radius:28px;overflow:hidden}
+.comp-head{padding:32px 40px 22px}
+.comp-head h3{font-family:var(--serif);font-size:26px;font-weight:600}
+.comp-head p{font-size:13px;color:var(--muted);margin-top:5px}
+.comp-table{width:100%;border-collapse:collapse;font-size:13px}
+.comp-table th{padding:14px 16px;text-align:center;background:rgba(255,255,255,.04);font-weight:700;font-size:11.5px;letter-spacing:.5px;border-bottom:1px solid var(--line)}
+.comp-table th:first-child{text-align:left}
+.comp-table td{padding:13px 16px;text-align:center;border-bottom:1px solid rgba(255,255,255,.04);color:var(--muted)}
+.comp-table td:first-child{text-align:left;font-weight:600;color:var(--text)}
+.comp-table tr:hover td{background:rgba(47,232,154,.03)}
+.exc-cell{font-weight:700;background:linear-gradient(90deg,var(--violet),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ══════════ NON-TUNAI ══════════ */
+#nontunai{background:var(--ink2)}
+.nt-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:52px}
+.nt-card{background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:44px 34px;position:relative;overflow:hidden;transition:all .35s var(--ease)}
+.nt-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 0% 100%,rgba(47,232,154,.05),transparent 60%);opacity:0;transition:opacity .4s}
+.nt-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--jade),transparent);opacity:0;transition:opacity .4s}
+.nt-card:hover{border-color:rgba(47,232,154,.22);transform:translateY(-5px);box-shadow:0 24px 60px rgba(0,0,0,.3)}
+.nt-card:hover::before,.nt-card:hover::after{opacity:1}
+.nt-icon{font-size:38px;margin-bottom:18px;display:block}
+.nt-title{font-size:19px;font-weight:700;color:var(--jade);margin-bottom:12px;font-family:var(--serif)}
+.nt-desc{font-size:14px;color:var(--muted);line-height:1.85}
+.nt-badge{display:inline-block;margin-top:18px;font-size:11px;letter-spacing:2px;text-transform:uppercase;background:rgba(47,232,154,.1);border:1px solid rgba(47,232,154,.2);color:var(--jade);padding:5px 14px;border-radius:20px;font-weight:600}
+
+/* ══════════ BENEFIT ══════════ */
+#manfaat{background:linear-gradient(180deg,var(--ink2),var(--ink3))}
+.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:52px}
+.benefit-card{background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:38px 30px;position:relative;overflow:hidden;transition:all .4s var(--ease)}
+.benefit-card:hover{transform:translateY(-10px);border-color:rgba(47,232,154,.25);box-shadow:0 28px 64px rgba(0,0,0,.3)}
+.benefit-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--jade),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.benefit-card:hover::after{transform:scaleX(1)}
+.benefit-n{font-family:var(--serif);font-size:80px;font-weight:700;color:rgba(47,232,154,.04);position:absolute;bottom:-10px;right:12px;line-height:1;pointer-events:none}
+.benefit-ico{width:56px;height:56px;border-radius:16px;background:rgba(47,232,154,.08);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:22px;border:1px solid rgba(47,232,154,.12)}
+.benefit-card h4{font-size:16.5px;font-weight:600;margin-bottom:10px}
+.benefit-card p{font-size:13.5px;color:var(--muted);line-height:1.8;position:relative;z-index:1}
+
+/* ══════════ CTA ══════════ */
+#cta{padding:140px 24px;text-align:center;position:relative;overflow:hidden}
+.cta-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 60% at 20% 50%,rgba(47,232,154,.07),transparent),radial-gradient(ellipse 60% 60% at 80% 50%,rgba(192,168,255,.06),transparent)}
+.cta-ring{position:absolute;border-radius:50%;border:1px solid;pointer-events:none;animation:ringPulse 4s ease-out infinite}
+.cta-ring-a{width:500px;height:500px;top:50%;left:50%;transform:translate(-50%,-50%);border-color:rgba(47,232,154,.06)}
+.cta-ring-b{width:700px;height:700px;top:50%;left:50%;transform:translate(-50%,-50%);border-color:rgba(47,232,154,.04);animation-delay:1.5s}
+.cta-ring-c{width:900px;height:900px;top:50%;left:50%;transform:translate(-50%,-50%);border-color:rgba(47,232,154,.025);animation-delay:3s}
+@keyframes ringPulse{0%{opacity:0;transform:translate(-50%,-50%) scale(.6)}40%{opacity:1}100%{opacity:0;transform:translate(-50%,-50%) scale(1.2)}}
+.cta-inner{position:relative;z-index:1;max-width:700px;margin:0 auto}
+.cta-inner .sec-h2{font-size:clamp(34px,5.5vw,62px);margin-bottom:20px}
+.cta-inner .sec-lead{margin:0 auto 52px;text-align:center}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+/* ══════════ CONTACT / FOOTER ══════════ */
+#kontak{background:#040c0a;padding:96px 24px 0}
+.contact-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:64px;padding-bottom:64px;border-bottom:1px solid var(--line)}
+.contact-brand .arabic-w{font-family:var(--arabic);font-size:60px;font-weight:700;background:linear-gradient(135deg,var(--jade),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;margin-bottom:8px}
+.contact-brand .brand-title{font-family:var(--serif);font-size:22px;font-weight:600;color:rgba(238,244,240,.8);margin-bottom:16px}
+.contact-brand p{font-size:13px;color:var(--faint);line-height:1.85;margin-bottom:22px}
+.c-chips{display:flex;gap:8px;flex-wrap:wrap}
+.c-chip{font-size:11px;font-weight:600;letter-spacing:.5px;padding:5px 12px;border-radius:20px}
+.chip-green{background:rgba(47,232,154,.1);border:1px solid rgba(47,232,154,.22);color:var(--jade)}
+.chip-dim{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--muted)}
+.contact-col h5{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--jade);margin-bottom:22px}
+.contact-link{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:rgba(238,244,240,.58);text-decoration:none;margin-bottom:16px;transition:color .22s;line-height:1.55}
+.contact-link:hover{color:var(--jade)}
+.cl-ico{font-size:17px;flex-shrink:0;margin-top:1px}
+.footer-bar{padding:24px 0;display:flex;align-items:center;justify-content:space-between;font-size:11.5px;color:var(--faint);flex-wrap:wrap;gap:10px}
+.footer-bar em{color:var(--jade);font-style:italic}
+
+/* ══════════ ANIMATIONS ══════════ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.fi{opacity:0;transform:translateY(34px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.fi.on{opacity:1;transform:translateY(0)}
+.fi-d1{transition-delay:.1s}.fi-d2{transition-delay:.2s}.fi-d3{transition-delay:.3s}.fi-d4{transition-delay:.4s}.fi-d5{transition-delay:.5s}
+
+/* ══════════ TOOLTIP badges ══════════ */
+[data-tip]{position:relative;cursor:default}
+[data-tip]:hover::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:rgba(6,16,14,.95);border:1px solid var(--line);color:var(--text);font-size:11.5px;padding:6px 12px;border-radius:8px;white-space:nowrap;z-index:100;pointer-events:none}
+
+/* ══════════ RESPONSIVE ══════════ */
+@media(max-width:980px){
+  #nav{padding:0 20px}.nav-menu{display:none}.nav-burger{display:flex}
+  .pptq-layout{grid-template-columns:1fr;gap:50px}.stats-row{grid-template-columns:repeat(2,1fr)}.pillars{grid-template-columns:1fr}
+  .event-top{grid-template-columns:1fr}.segments{grid-template-columns:1fr}
+  .pkg-row{grid-template-columns:1fr 1fr}.utama-grid{grid-template-columns:1fr;gap:36px}.contact-grid{grid-template-columns:1fr}
+  .benefit-grid{grid-template-columns:1fr 1fr}.why-grid{grid-template-columns:1fr}.pkg-utama{padding:40px 28px}
+  .nt-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  section{padding:80px 16px}.pkg-row{grid-template-columns:1fr}.nt-grid{grid-template-columns:1fr}
+  .benefit-grid{grid-template-columns:1fr}.stats-row{grid-template-columns:1fr 1fr}
+  .timeline{padding:32px 20px}.comp-wrap{overflow-x:auto}.comp-table{min-width:680px}
+  .utama-name{font-size:40px}.cursor-dot,.cursor-ring{display:none}
+}
+[id]{scroll-margin-top:74px}
+</style>
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div id="readProgress"></div>
+
+<nav id="nav">
+  <a class="nav-logo" href="#hero">
+    <span class="nav-logo-text">Lailatul <em>Wada'</em> 2026</span>
+  </a>
+  <ul class="nav-menu" id="navMenu">
+    <li><a href="#pptq">PPTQ Ibnu Abbas</a></li>
+    <li><a href="#event">Tentang Acara</a></li>
+    <li><a href="#sponsorship">Sponsorship</a></li>
+    <li><a href="#manfaat">Manfaat</a></li>
+    <li><a href="#kontak" class="nav-cta-btn">Jadi Sponsor →</a></li>
+  </ul>
+  <div class="nav-burger" id="navBurger"><span></span><span></span><span></span></div>
+</nav>
+
+<section id="hero">
+  <div class="hero-canvas">
+    <div class="orb orb-1"></div><div class="orb orb-2"></div>
+    <div class="orb orb-3"></div><div class="orb orb-4"></div>
+    <div class="hero-grid"></div>
+    <canvas id="particleCanvas"></canvas>
+    <div class="hero-aurora">
+      <div class="aurora-ring"></div><div class="aurora-ring"></div>
+      <div class="aurora-ring"></div><div class="aurora-ring"></div>
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge">Website Resmi · Lailatul Wada' 2026</div>
+    <span class="hero-arabic">ليلة الوداع</span>
+    <h1 class="hero-title"><strong>Lailatul Wada'</strong> 2026</h1>
+    <p class="hero-tagline">"Ukhuwah Di Seutas Benang"</p>
+    <p class="hero-motto">Uniting Hearts &nbsp;·&nbsp; Weaving History &nbsp;·&nbsp; Crafting Legacy</p>
+    <div class="hero-pills">
+      <div class="hero-pill">📅 11 Juni 2026</div>
+      <div class="hero-pill">📍 Komplek PPTQ Ibnu Abbas Kampus Putra, Klaten</div>
+      <div class="hero-pill">👥 700+ Santri & 1.000+ Penonton Digital</div>
+      <div class="hero-pill">🎬 Live Streaming YouTube & Instagram</div>
+    </div>
+    <div class="hero-actions">
+      <a href="#sponsorship" class="btn-primary ripple-btn">✦ &nbsp;Lihat Paket Sponsorship</a>
+      <a href="#pptq" class="btn-outline">Kenali Kami</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <span class="scroll-label">Scroll</span>
+    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <span class="m-item">✦ <span>PPTQ Ibnu Abbas Klaten</span></span><span class="m-sep">·</span>
+    <span class="m-item">🎭 <span>Teater Kolosal Sinematik</span></span><span class="m-sep">·</span>
+    <span class="m-item">🛍️ <span>Bazaar UMKM</span></span><span class="m-sep">·</span>
+    <span class="m-item">🎙️ <span>Talkshow Inspiratif</span></span><span class="m-sep">·</span>
+    <span class="m-item">📺 <span>Live Streaming</span></span><span class="m-sep">·</span>
+    <span class="m-item">🏆 <span>7 Paket Sponsorship</span></span><span class="m-sep">·</span>
+    <span class="m-item">🤝 <span>Kemitraan Strategis</span></span><span class="m-sep">·</span>
+    <span class="m-item">11 Juni 2026</span><span class="m-sep">·</span>
+    <span class="m-item">✦ <span>PPTQ Ibnu Abbas Klaten</span></span><span class="m-sep">·</span>
+    <span class="m-item">🎭 <span>Teater Kolosal Sinematik</span></span><span class="m-sep">·</span>
+    <span class="m-item">🛍️ <span>Bazaar UMKM</span></span><span class="m-sep">·</span>
+    <span class="m-item">🎙️ <span>Talkshow Inspiratif</span></span><span class="m-sep">·</span>
+    <span class="m-item">📺 <span>Live Streaming</span></span><span class="m-sep">·</span>
+    <span class="m-item">🏆 <span>7 Paket Sponsorship</span></span><span class="m-sep">·</span>
+    <span class="m-item">🤝 <span>Kemitraan Strategis</span></span><span class="m-sep">·</span>
+    <span class="m-item">11 Juni 2026</span><span class="m-sep">·</span>
+  </div>
+</div>
+
+<section id="pptq">
+  <div class="wrap">
+    <div class="fi on">
+      <div class="chip">Mengenal Institusi</div>
+      <h2 class="sec-h2">PPTQ Ibnu Abbas<br><strong style="color:var(--jade)">Klaten</strong></h2>
+      <p class="sec-lead">Pondok Pesantren Tahfidzul Qur'an terkemuka di Klaten — melahirkan generasi Qur'ani berakhlak mulia, berprestasi nasional, dan berdampak global sejak 2007.</p>
+    </div>
+
+    <div class="pptq-layout">
+      <div class="pptq-text fi fi-d1 on">
+        <p>Pondok Pesantren Tahfidzul Qur'an Ibnu Abbas Klaten berdiri pada tahun 2007, didirikan oleh <strong>Dr. K.H. Muhammad Muinudinillah Basri, Lc., M.A.</strong> — seorang ulama berpengalaman dengan visi membentuk generasi Islam yang hafizh, berilmu, dan siap menjadi pemimpin umat.</p>
+        <div class="blockquote">
+          "Alhamdulillah, hari ini ananda semua telah berhasil menuntaskan pendidikan… Ini bukan akhir, tetapi awal dari perjuangan berikutnya di tengah masyarakat."
+          <cite>— KH. Muhammad Uqbah Aziz, Lc., M.H., Pimpinan PPTQ Ibnu Abbas Klaten</cite>
+        </div>
+        <p>PPTQ Ibnu Abbas mengintegrasikan <strong>Kurikulum Merdeka</strong> dengan kurikulum diniyyah pesantren secara harmonis, menghasilkan lulusan yang mampu meraih prestasi akademik tinggi sekaligus memiliki fondasi keislaman yang kuat.</p>
+        <p>Pesantren ini memiliki <strong>tiga kampus aktif di Klaten, Jawa Tengah</strong>, dengan lingkungan belajar yang kondusif, asrama nyaman, dan ekosistem pendidikan Islam yang lengkap — dari tingkat SMP hingga SMA.</p>
+      </div>
+
+      <div class="fact-stack fi fi-d2 on">
+        <div class="fact-card"><div class="fact-ico">🕌</div><div class="fact-body"><h4>Didirikan Tahun 2007</h4><p>19 tahun melayani pendidikan Islam di Klaten dan sekitarnya</p></div></div>
+        <div class="fact-card"><div class="fact-ico">📚</div><div class="fact-body"><h4>Kurikulum Terintegrasi</h4><p>Kurikulum Merdeka + Diniyyah Pesantren dalam satu sistem yang harmonis</p></div></div>
+        <div class="fact-card"><div class="fact-ico">🏫</div><div class="fact-body"><h4>3 Kampus Aktif</h4><p>Tersebar di Klaten — melayani santri SMP dan SMA dari berbagai daerah Indonesia</p></div></div>
+        <div class="fact-card"><div class="fact-ico">🌍</div><div class="fact-body"><h4>Jaringan Alumni Global</h4><p>Lulusan diterima di universitas dalam &amp; luar negeri; berprestasi nasional &amp; internasional</p></div></div>
+        <div class="fact-card"><div class="fact-ico">📖</div><div class="fact-body"><h4>Fokus Tahfidzul Qur'an</h4><p>Program hafalan Al-Qur'an terstruktur dengan bimbingan ustadz-ustadzah bersanad</p></div></div>
+      </div>
+    </div>
+
+    <div class="stats-row fi on">
+      <div class="stat-cell"><span class="stat-num" data-target="1500+">+</span><div class="stat-lbl">Lebih,<br>Santri aktif bermukim</div></div>
+      <div class="stat-cell"><span class="stat-num" data-target="19+">0</span><div class="stat-lbl">Tahun berdiri &amp;<br>berkontribusi</div></div>
+      <div class="stat-cell"><span class="stat-num" data-target="3">0</span><div class="stat-lbl">Kampus di<br>Klaten, Jateng</div></div>
+      <div class="stat-cell"><span class="stat-num">100%</span><div class="stat-lbl">Komitmen<br>pendidikan Qur'ani</div></div>
+    </div>
+
+    <div class="pillars" style="margin-top:64px">
+      <div class="chip fi on" style="grid-column:1/-1">Tiga Pilar Utama Pesantren</div>
+      <div class="pillar fi fi-d1 on"><div class="pillar-num">01</div><span class="pillar-icon">📖</span><div class="pillar-title">Tahfidzul Qur'an</div><p class="pillar-desc">Program hafalan Al-Qur'an yang terstruktur dan bersanad, menjadi fondasi utama pembentukan karakter santri yang mencintai kitabullah dan mengamalkan isinya dalam kehidupan sehari-hari.</p></div>
+      <div class="pillar fi fi-d2 on"><div class="pillar-num">02</div><span class="pillar-icon">🎓</span><div class="pillar-title">Akademik Unggul</div><p class="pillar-desc">Integrasi Kurikulum Merdeka dengan diniyyah pesantren menghasilkan lulusan berprestasi tinggi — siap bersaing di universitas terkemuka nasional maupun internasional.</p></div>
+      <div class="pillar fi fi-d3 on"><div class="pillar-num">03</div><span class="pillar-icon">🤲</span><div class="pillar-title">Akhlak &amp; Ukhuwah</div><p class="pillar-desc">Pembentukan akhlakul karimah melalui kehidupan pesantren yang penuh nilai — gotong royong, kedisiplinan, dan ukhuwah islamiyah yang dirajut sejak hari pertama masuk pondok.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="event">
+  <div class="wrap">
+    <div class="event-top">
+      <div class="fi on">
+        <div class="chip">Tentang Acara</div>
+        <h2 class="sec-h2">Lailatul Wada' 2026<br><em style="font-family:var(--serif);font-style:italic;color:var(--gold);font-size:75%;font-weight:300">Crafting the Future Legacy</em></h2>
+        <div class="event-desc">
+          <p>Lebih dari sekadar panggung perpisahan, <strong>Lailatul Wada' 2026</strong> adalah mahakarya seni, budaya, dan ukhuwah Islamiyah persembahan santri kelas 9 dan 12 SMP/SMA PPTQ Ibnu Abbas Klaten.</p>
+          <p>Acara ini dirancang sebagai <strong>festival edukasi terintegrasi</strong> yang menggabungkan pemberdayaan ekonomi (Bazaar UMKM), wawasan intelektual (Talkshow), dan pementasan hiburan premium (Teater Kolosal Sinematik). Bagi mitra sponsor, ini adalah ekosistem pemasaran yang sangat menjanjikan — menjangkau <strong>keluarga Muslim kelas menengah, generasi Z, tokoh masyarakat, dan jaringan alumni</strong> dari seluruh Indonesia.</p>
+        </div>
+        <div class="event-tags">
+          <div class="event-tag">📅 11 Juni 2026</div>
+          <div class="event-tag">🏛️ Komplek PPTQ Ibnu Abbas Kampus Putra, Klaten</div>
+          <div class="event-tag">🎓 Kelas 9 &amp; 12 SMP/SMA</div>
+          <div class="event-tag">🎬 Live Streaming</div>
+        </div>
+      </div>
+
+      <div class="countdown-box fi on">
+        <span class="cd-label">Menuju Hari H</span>
+        <div class="cd-nums">
+          <div class="cd-block"><span class="cd-n" id="cdDays">--</span><div class="cd-u">Hari</div></div>
+          <div class="cd-sep">:</div>
+          <div class="cd-block"><span class="cd-n" id="cdHours">--</span><div class="cd-u">Jam</div></div>
+          <div class="cd-sep">:</div>
+          <div class="cd-block"><span class="cd-n" id="cdMins">--</span><div class="cd-u">Menit</div></div>
+        </div>
+        <div class="cd-seconds"><div class="cd-n" id="cdSecs">--</div><div class="cd-u">Detik</div></div>
+      </div>
+    </div>
+
+    <div class="segments">
+      <div class="seg seg-bazaar fi fi-d1 on">
+        <div class="seg-bg"></div><div class="seg-glow"></div>
+        <div class="seg-inner">
+          <div class="seg-icon">🛍️</div>
+          <span class="seg-badge">Pagi Hari</span>
+          <div class="seg-title">Bazaar UMKM</div>
+          <p class="seg-desc">Pasar kreasi santri dan mitra UMKM lokal — menampilkan produk unggulan, kuliner halal, kerajinan tangan, dan karya kreatif siswa. Sponsor mendapat stand eksklusif di area lalu lintas pengunjung tertinggi.</p>
+          <div class="seg-foot">🕗 07.00 — 13.00 &nbsp;|&nbsp; Area Komplek Utama</div>
+        </div>
+      </div>
+      <div class="seg seg-talk fi fi-d2 on">
+        <div class="seg-bg"></div><div class="seg-glow"></div>
+        <div class="seg-inner">
+          <div class="seg-icon">🎙️</div>
+          <span class="seg-badge">18.00 WIB</span>
+          <div class="seg-title">Talkshow Inspiratif</div>
+          <p class="seg-desc">Sesi bincang berbobot bersama tokoh inspiratif sebagai pembuka euforia malam puncak. Tersedia slot khusus kuis interaktif dari sponsor untuk membagikan doorprize dan memperkenalkan produk secara langsung.</p>
+          <div class="seg-foot">🕔 18.00 — 19.30 &nbsp;|&nbsp; Masjid Mu'inuddinillah Basri & Kursi Tamu VIP</div>
+        </div>
+      </div>
+      <div class="seg seg-malam fi fi-d3 on">
+        <div class="seg-bg"></div><div class="seg-glow"></div>
+        <div class="seg-inner">
+          <div class="seg-icon">✨</div>
+          <span class="seg-badge">Malam Puncak</span>
+          <div class="seg-title">Teater Kolosal Sinematik</div>
+          <p class="seg-desc">Pertunjukan sinematik bertema "Crafting the Future Legacy" — menggabungkan seni peran, gerak, dan vokal dari ratusan santri. Iklan TVC sponsor tayang di Videotron raksasa dan Live Streaming.</p>
+          <div class="seg-foot">🌙 19.30 — Selesai &nbsp;|&nbsp; Panggung Utama & Live YT/IG</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline fi on">
+      <h3>Rundown Acara <span style="color:var(--jade)">11 Juni 2026</span></h3>
+      <p>Agenda resmi hari-H — memastikan setiap segmen mendapatkan eksposur yang terukur untuk mitra sponsor.</p>
+      <div class="tl">
+        <div class="tl-axis"></div>
+        <div class="tl-row"><div class="tl-dot"><div class="tl-dot-core"></div></div><div class="tl-time">07.00</div><div class="tl-body"><h4>Pembukaan Bazaar UMKM &amp; Pameran Karya</h4><p>Area komplek mulai dipadati pengunjung, wali santri, dan masyarakat umum. Stand mitra UMKM dan Sponsor Utama beroperasi penuh di titik paling strategis.</p></div></div>
+        <div class="tl-row"><div class="tl-dot"><div class="tl-dot-core" style="background:var(--violet);box-shadow:0 0 18px rgba(192,168,255,.6)"></div></div><div class="tl-time" style="color:var(--violet)">13.00</div><div class="tl-body"><h4>Afternoon Break</h4><p>Sesi istirahat, sholat berjamaah dan makan siang. Logo sponsor tetap tayang di loop layar screen.</p></div></div>
+        <div class="tl-row"><div class="tl-dot"><div class="tl-dot-core" style="background:var(--amber);box-shadow:0 0 18px rgba(245,168,48,.6)"></div></div><div class="tl-time" style="color:var(--amber)">16.00</div><div class="tl-body"><h4>Open Gate Undangan VIP</h4><p>Pengecekan akhir tata cahaya, sistem suara, briefing pengisi acara, dan penyambutan tamu VIP — pejabat, tokoh agama, petinggi instansi mitra.</p></div></div>
+        <div class="tl-row"><div class="tl-dot"><div class="tl-dot-core" style="background:var(--gold);box-shadow:0 0 18px rgba(240,208,96,.7)"></div></div><div class="tl-time" style="color:var(--gold)">18.00</div><div class="tl-body"><h4>Sesi Talkshow Inspiratif</h4><p>Talkshow interaktif bersama narasumber tamu eksklusif. MC membacakan kuis dan membagikan doorprize dari pihak Sponsor — prime-time awal yang dinikmati seluruh hadirin.</p></div></div>
+        <div class="tl-row"><div class="tl-dot"><div class="tl-dot-core" style="background:var(--jade);box-shadow:0 0 20px rgba(47,232,154,.8)"></div></div><div class="tl-time">19.30</div><div class="tl-body"><h4>Malam Puncak Lailatul Wada'</h4><p>Pembukaan seremonial resmi, sambutan pimpinan, dan Teater Kolosal Sinematik. Live streaming mengudara, Video Iklan (TVC) sponsor diputar full screen di hadapan seluruh mata.</p></div></div>
+        <div class="tl-row" style="padding-bottom:0"><div class="tl-dot"><div class="tl-dot-core" style="background:var(--jade-dim)"></div></div><div class="tl-time">22.30</div><div class="tl-body"><h4>Penutupan &amp; Sesi Dokumentasi</h4><p>Kenang-kenangan bersama, sesi foto dokumentasi photobooth bertabur logo sponsor.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="sponsorship">
+  <div class="wrap">
+    <div class="fi on">
+      <div class="chip">Kemitraan Strategis</div>
+      <h2 class="sec-h2">Paket <strong>Sponsorship</strong></h2>
+      <p class="sec-lead">Investasi brand Anda dalam momentum yang bermakna — menjangkau komunitas Muslim yang solid, loyal, dan berkembang pesat.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card fi fi-d1 on"><div class="why-ico">👥</div><div class="why-text"><h4>700+ Audiens Langsung</h4><p>Santri, Pegawai, dan tamu undangan hadir secara fisik — plus ribuan penonton live streaming dari seluruh Indonesia.</p></div></div>
+      <div class="why-card fi fi-d2 on"><div class="why-ico">📱</div><div class="why-text"><h4>Eksposur Digital Multi-Platform</h4><p>Logo Anda tayang di Instagram, YouTube, poster digital, dan Videotron utama panggung — jangkauan organik yang otentik dan tak ternilai.</p></div></div>
+      <div class="why-card fi fi-d3 on"><div class="why-ico">💎</div><div class="why-text"><h4>Citra Brand Positif &amp; Terpercaya</h4><p>Merek yang hadir dalam acara pendidikan Islam dikenal sebagai brand yang peduli, bertanggung sosial, dan berintegritas tinggi.</p></div></div>
+      <div class="why-card fi fi-d4 on"><div class="why-ico">🤝</div><div class="why-text"><h4>Relasi Komunitas Jangka Panjang</h4><p>Membangun jaringan dengan ribuan keluarga Muslim — calon pelanggan loyal dan potensi kolaborasi jangka panjang yang tak ternilai.</p></div></div>
+    </div>
+
+    <div class="pkg-header fi on">
+      <div><div class="chip">7 Tingkatan Paket</div><h3 style="font-family:var(--serif);font-size:36px;font-weight:700">Pilih Paket Anda</h3></div>
+      <div class="note">💡 Setiap paket dapat dikustomisasi. Hubungi kami untuk mendiskusikan kebutuhan spesifik perusahaan Anda.</div>
+    </div>
+
+    <div class="pkg-row fi on">
+      <div class="pkg c-bronze"><span class="pkg-gem">🥉</span><div class="pkg-name">Bronze</div><div class="pkg-tagline">Brand Awareness Dasar</div><div class="pkg-price">Rp 750.000</div><div class="pkg-note">Ideal untuk UMKM &amp; bisnis lokal</div><div class="pkg-rule"></div><ul class="pkg-list"><li><span class="chk" style="background:rgba(205,127,50,.15);color:#cd7f32">✓</span>Nama brand dibacakan MC 2× (non-prime time)</li><li><span class="chk" style="background:rgba(205,127,50,.15);color:#cd7f32">✓</span>Logo ukuran S di poster digital &amp; media sosial</li><li><span class="chk" style="background:rgba(205,127,50,.15);color:#cd7f32">✓</span>Logo ukuran S pada banner acara</li><li><span class="chk" style="background:rgba(205,127,50,.15);color:#cd7f32">✓</span>Logo ukuran S pada stiker souvenir</li></ul></div>
+      <div class="pkg c-silver"><span class="pkg-gem">🥈</span><div class="pkg-name">Silver</div><div class="pkg-tagline">Ekspansi Visibilitas Area</div><div class="pkg-price">Rp 1.500.000</div><div class="pkg-note">Visibilitas lebih luas di lokasi acara</div><div class="pkg-rule"></div><ul class="pkg-list"><li><span class="chk" style="background:rgba(184,200,192,.15);color:#b8c8c0">✓</span>Nama brand dibacakan MC 2× pada malam puncak</li><li><span class="chk" style="background:rgba(184,200,192,.15);color:#b8c8c0">✓</span>Logo ukuran M di poster digital</li><li><span class="chk" style="background:rgba(184,200,192,.15);color:#b8c8c0">✓</span>Logo ukuran M pada banner acara</li><li><span class="chk" style="background:rgba(184,200,192,.15);color:#b8c8c0">✓</span>Logo ukuran S pada stiker souvenir</li><li><span class="chk" style="background:rgba(184,200,192,.15);color:#b8c8c0">✓</span>Logo pada 1 titik umbul-umbul ukuran S</li></ul></div>
+      <div class="pkg c-gold"><span class="pkg-gem">🥇</span><div class="pkg-name">Gold</div><div class="pkg-tagline">Penguatan Branding Digital</div><div class="pkg-price">Rp 3.000.000</div><div class="pkg-note">Penetrasi digital yang lebih dalam</div><div class="pkg-rule"></div><ul class="pkg-list"><li><span class="chk" style="background:rgba(240,208,96,.15);color:var(--gold)">✓</span>Nama brand dibacakan MC 3× pada malam puncak</li><li><span class="chk" style="background:rgba(240,208,96,.15);color:var(--gold)">✓</span>Logo ukuran M di semua media cetak &amp; digital</li><li><span class="chk" style="background:rgba(240,208,96,.15);color:var(--gold)">✓</span>Logo di umbul-umbul ukuran M area strategis</li><li><span class="chk" style="background:rgba(240,208,96,.15);color:var(--gold)">✓</span>Logo di slide terakhir Video Teaser acara</li><li><span class="chk" style="background:rgba(240,208,96,.15);color:var(--gold)">✓</span>Logo di Instagram Story &amp; caption post resmi</li></ul></div>
+
+      <div class="pkg c-plat"><span class="pkg-gem">💎</span><div class="pkg-name">Platinum</div><div class="pkg-tagline">Brand Experience &amp; Interaksi</div><div class="pkg-price">Rp 5.000.000</div><div class="pkg-note">Engagement langsung dengan audiens</div><div class="pkg-rule"></div><ul class="pkg-list"><li><span class="chk">✓</span>Nama brand dibacakan MC 3× di Prime Time</li><li><span class="chk">✓</span>Logo ukuran L di semua media cetak &amp; digital</li><li><span class="chk">✓</span>Logo di slide awal &amp; akhir Video Teaser</li><li><span class="chk">✓</span>Logo tayang berkala di Videotron utama panggung</li><li><span class="chk">✓</span>Mention di Instagram Story &amp; caption post</li><li><span class="chk">✓</span>Sesi kuis interaktif MC dengan hadiah dari sponsor</li></ul></div>
+      <div class="pkg c-diamond" style="border-color:rgba(96,192,248,.3);box-shadow:0 0 40px rgba(96,192,248,.08)"><span class="pkg-hot">⭐ Populer</span><span class="pkg-gem">💠</span><div class="pkg-name">Diamond</div><div class="pkg-tagline">Brand Dominance &amp; Exhibition</div><div class="pkg-price">Rp 7.500.000</div><div class="pkg-note">Dominasi penuh di semua media &amp; lokasi</div><div class="pkg-rule"></div><ul class="pkg-list"><li><span class="chk" style="background:rgba(96,192,248,.15);color:var(--sapphire)">✓</span>Nama brand dibacakan MC sebagai mitra Diamond</li><li><span class="chk" style="background:rgba(96,192,248,.15);color:var(--sapphire)">✓</span>Logo ukuran L di semua media cetak &amp; digital</li><li><span class="chk" style="background:rgba(96,192,248,.15);color:var(--sapphire)">✓</span>Logo di posisi awal, tengah &amp; akhir Video Teaser</li><li><span class="chk" style="background:rgba(96,192,248,.15);color:var(--sapphire)">✓</span>Slide Cut khusus brand di Videotron utama</li><li><span class="chk" style="background:rgba(96,192,248,.15);color:var(--sapphire)">✓</span>Promosi intensif Instagram Story &amp; caption</li><li><span class="chk" style="background:rgba(96,192,248,.15);color:var(--sapphire)">✓</span>Kuis produk dipandu MC + Gratis 1 Stand Bazar</li></ul></div>
+      <div class="pkg c-ame"><span class="pkg-gem">🔮</span><div class="pkg-name">Amethyst</div><div class="pkg-tagline">Mitra Strategis &amp; High Engagement</div><div class="pkg-price">Rp 10.000.000</div><div class="pkg-note">Kemitraan strategis &amp; eksposur premium</div><div class="pkg-rule"></div><ul class="pkg-list"><li><span class="chk" style="background:rgba(192,168,255,.15);color:var(--violet)">✓</span>Logo ukuran XL di semua media cetak &amp; umbul-umbul</li><li><span class="chk" style="background:rgba(192,168,255,.15);color:var(--violet)">✓</span>1 Video Reels khusus profil perusahaan di Instagram</li><li><span class="chk" style="background:rgba(192,168,255,.15);color:var(--violet)">✓</span>Logo tayang sepanjang durasi Video Teaser</li><li><span class="chk" style="background:rgba(192,168,255,.15);color:var(--violet)">✓</span>Prioritas utama di setiap agenda promosi panitia</li><li><span class="chk" style="background:rgba(192,168,255,.15);color:var(--violet)">✓</span>Videotron + Slide Cut khusus perusahaan</li><li><span class="chk" style="background:rgba(192,168,255,.15);color:var(--violet)">✓</span>Kuis MC min. 3× & Stand Bazar lokasi terbaik</li></ul></div>
+    </div>
+
+    <div class="pkg-utama fi on">
+      <div class="utama-glow"></div><div class="utama-glow-2"></div><div class="utama-glow-3"></div>
+      <div class="utama-grid">
+        <div>
+          <span class="utama-crown">👑</span>
+          <span class="utama-eyebrow">Tingkat Tertinggi — Paket Eksklusif</span>
+          <span class="utama-name">Sponsor<br>Utama</span>
+          <div class="utama-price">30% dari Total Anggaran<br><small>≈ Rp 17.090.250 (estimasi)</small></div>
+          <blockquote class="utama-quote">Nama perusahaan Anda menjadi identitas acara:<br><strong style="color:var(--gold)">"Lailatul Wada' 2026 with [Nama Perusahaan Anda]"</strong><br>ditampilkan di seluruh media dan platform resmi.</blockquote>
+        </div>
+        <ul class="utama-list">
+          <li><span class="utama-ico">🎤</span><span><strong>Stage Presence:</strong> Sambutan langsung atau presentasi produk 5 menit di hadapan seluruh audiens malam puncak — exposure personal yang tak ternilai.</span></li>
+          <li><span class="utama-ico">📺</span><span><strong>Live Streaming Takeover:</strong> Logo Anda menjadi satu-satunya watermark permanen selama siaran YouTube &amp; Instagram berlangsung sepanjang malam.</span></li>
+          <li><span class="utama-ico">🏆</span><span><strong>Exclusive Media Placement:</strong> Logo ukuran terbesar di posisi paling atas pada semua media — poster, banner, umbul-umbul, backdrop, dan dekorasi utama.</span></li>
+          <li><span class="utama-ico">🎬</span><span><strong>Premium Video Content:</strong> Logo di seluruh Video Teaser + 1 Video Profil perusahaan khusus di Instagram resmi acara.</span></li>
+          <li><span class="utama-ico">✨</span><span><strong>ALL-IN Benefits:</strong> Seluruh stand bazar, slide cut Videotron, kuis interaktif, dan prioritas absolut di semua publikasi panitia.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="comp-wrap fi on">
+      <div class="comp-head"><h3>Perbandingan Ukuran Logo di Media Promosi</h3><p>S = Small · M = Medium · L = Large · XL = Extra Large · <span style="color:var(--gold)">★ Exclusive</span> = Posisi &amp; Ukuran Terbesar</p></div>
+      <table class="comp-table">
+        <thead><tr><th style="text-align:left">Media Promosi</th><th style="color:#cd7f32">Bronze</th><th style="color:#b8c8c0">Silver</th><th style="color:var(--gold)">Gold</th><th style="color:var(--jade)">Platinum</th><th style="color:var(--sapphire)">Diamond</th><th style="color:var(--violet)">Amethyst</th><th style="color:var(--gold)">★ Utama</th></tr></thead>
+        <tbody>
+          <tr><td>Poster Digital</td><td>S</td><td>M</td><td>M</td><td>L</td><td>L</td><td>XL</td><td class="exc-cell">★ Eksklusif</td></tr>
+          <tr><td>Banner Fisik</td><td>S</td><td>M</td><td>M</td><td>L</td><td>L</td><td>XL</td><td class="exc-cell">★ Eksklusif</td></tr>
+          <tr><td>Stiker Souvenir</td><td>S</td><td>S</td><td>M</td><td>M</td><td>L</td><td>XL</td><td class="exc-cell">★ Eksklusif</td></tr>
+          <tr><td>Umbul-umbul</td><td>—</td><td>S</td><td>S</td><td>M</td><td>M</td><td>L</td><td class="exc-cell">★ Eksklusif</td></tr>
+          <tr><td>Video Teaser</td><td>—</td><td>—</td><td>Akhir saja</td><td>Awal &amp; Akhir</td><td>Awal, Tengah, Akhir</td><td>Sepanjang video</td><td class="exc-cell">★ Permanen</td></tr>
+          <tr><td>Videotron Panggung</td><td>—</td><td>—</td><td>—</td><td>Berkala</td><td>Slide Cut</td><td>Slide Cut Prioritas</td><td class="exc-cell">★ Live Full</td></tr>
+          <tr><td>Live Streaming</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="exc-cell">★ Watermark</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="nontunai">
+  <div class="wrap">
+    <div class="fi on">
+      <div class="chip">Alternatif Kerjasama</div>
+      <h2 class="sec-h2">Sponsorship <strong>Non-Tunai</strong></h2>
+      <p class="sec-lead">Kami terbuka untuk berbagai bentuk kemitraan — tidak hanya finansial, karena setiap kontribusi bermakna dalam membangun acara yang luar biasa.</p>
+    </div>
+    <div class="nt-grid">
+      <div class="nt-card fi fi-d1 on"><span class="nt-icon">🔧</span><div class="nt-title">Technical Partner</div><p class="nt-desc">Dukungan fasilitas teknis: sewa panggung, sound system, lighting profesional, videotron, production house multimedia, atau jasa percetakan media promosi. Nilai jasa disetarakan dengan paket tunai yang sesuai.</p><span class="nt-badge">Barter Jasa &amp; Sarana</span></div>
+      <div class="nt-card fi fi-d2 on"><span class="nt-icon">🍱</span><div class="nt-title">F&amp;B &amp; Product Partner</div><p class="nt-desc">Penyediaan konsumsi panitia &amp; pengisi acara, atau produk fisik sebagai merchandise dan doorprize eksklusif. Brand dipromosikan langsung di sesi kuis MC, logo dicantumkan di semua media promosi.</p><span class="nt-badge">Barter Produk</span></div>
+      <div class="nt-card fi fi-d3 on"><span class="nt-icon">📡</span><div class="nt-title">Media Partner</div><p class="nt-desc">Kerjasama publikasi timbal balik melalui portal berita online, radio komunitas, atau akun media sosial berpengaruh. Memperluas jangkauan audiens kedua pihak secara signifikan dan organik.</p><span class="nt-badge">Exposure Partner</span></div>
+      <div class="nt-card fi fi-d4 on"><span class="nt-icon">🤲</span><div class="nt-title">Donasi Amal Jariyah</div><p class="nt-desc">Dukungan dana sukarela tanpa ikatan kontrak komersial — sepenuhnya sebagai amal jariyah pembangunan generasi santri. Nama donatur dicantumkan, laporan transparan diberikan, dan doa tulus mengiringi setiap kontribusi.</p><span class="nt-badge">Lillahi Ta'ala</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="manfaat">
+  <div class="wrap">
+    <div class="fi on">
+      <div class="chip">Keuntungan Mitra</div>
+      <h2 class="sec-h2">Mengapa Menjadi<br><strong>Sponsor Kami?</strong></h2>
+      <p class="sec-lead">Lebih dari sekadar iklan — ini adalah investasi brand, reputasi, dan relasi komunitas yang memberikan nilai nyata dan berkelanjutan.</p>
+    </div>
+    <div class="benefit-grid">
+      <div class="benefit-card fi fi-d1 on"><div class="benefit-n">01</div><div class="benefit-ico">📣</div><h4>Jangkauan Pasar Terkonsentrasi</h4><p>Akses langsung ke 700+ audiens fisik yang berkumpul dalam satu momentum — santri, wali santri lintas kota, dan alumni. Ditambah ribuan penonton live streaming nasional.</p></div>
+      <div class="benefit-card fi fi-d2 on"><div class="benefit-n">02</div><div class="benefit-ico">⭐</div><h4>Kredibilitas &amp; Citra Positif</h4><p>Brand yang hadir dalam acara pendidikan Islam dikenal sebagai mitra yang bertanggung jawab sosial — meningkatkan kepercayaan konsumen dan loyalitas komunitas.</p></div>
+      <div class="benefit-card fi fi-d3 on"><div class="benefit-n">03</div><div class="benefit-ico">🎯</div><h4>Eksposur Brand Multi-Layer</h4><p>Logo Anda hadir di media cetak, digital, panggung, live streaming, dan konten medsos — exposure berlapis yang memastikan pesan brand tersampaikan berulang kali.</p></div>
+      <div class="benefit-card fi fi-d4 on"><div class="benefit-n">04</div><div class="benefit-ico">🤝</div><h4>Relasi Komunitas Jangka Panjang</h4><p>Membangun jaringan dengan ribuan keluarga Muslim — calon pelanggan yang loyal, dari mulut ke mulut yang organik, dan potensi kolaborasi jangka panjang yang tak ternilai.</p></div>
+      <div class="benefit-card fi fi-d5 on"><div class="benefit-n">05</div><div class="benefit-ico">🌱</div><h4>CSR yang Autentik &amp; Berdampak</h4><p>Kontribusi nyata dalam mendidik generasi bangsa — nilai CSR yang otentik, dirasakan langsung oleh penerima, dan meningkatkan citra perusahaan di mata publik secara tulus.</p></div>
+      <div class="benefit-card fi on"><div class="benefit-n">06</div><div class="benefit-ico">📊</div><h4>Laporan Pasca-Kegiatan Lengkap</h4><p>Dokumentasi foto &amp; video profesional, rekap statistik publikasi medsos, laporan eksposur logo, dan laporan penggunaan dana — transparansi penuh untuk mitra utama kami.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="cta">
+  <div class="cta-bg"></div>
+  <div class="cta-ring cta-ring-a"></div><div class="cta-ring cta-ring-b"></div><div class="cta-ring cta-ring-c"></div>
+  <div class="cta-inner">
+    <div class="chip" style="justify-content:center;margin-bottom:16px">Bergabunglah Bersama Kami</div>
+    <h2 class="sec-h2 fi on">Jadilah Bagian dari<br><strong style="color:var(--jade)">Sejarah Lailatul Wada' 2026</strong></h2>
+    <p class="sec-lead fi on">Investasi terbaik adalah yang memberi nilai — bagi brand Anda dan bagi generasi penerus bangsa. Satu langkah kecil Anda, dampak besar bagi ratusan santri.</p>
+    <div class="cta-btns fi on">
+      <a href="https://wa.me/6285866573374" class="btn-primary ripple-btn" target="_blank">💬 &nbsp;WhatsApp Sekarang</a>
+      <a href="mailto:humaslailatulwada@gmail.com" class="btn-outline">✉️ &nbsp;Kirim Email</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontak">
+  <div class="wrap">
+    <div class="contact-grid fi on">
+      <div class="contact-brand">
+        <span class="arabic-w" dir="rtl">ليلة الوداع</span>
+        <div class="brand-title">Lailatul Wada' 2026</div>
+        <p>Diselenggarakan oleh Panitia Lailatul Wada' PPTQ Ibnu Abbas Klaten — Kampus 2, di bawah bimbingan dan pengawasan <strong>Ust. Ashim, Lc.</strong></p>
+        <div class="c-chips">
+          <span class="c-chip chip-green">11 Juni 2026</span>
+          <span class="c-chip chip-dim">Klaten, Jawa Tengah</span>
+          <span class="c-chip chip-dim">PPTQ Ibnu Abbas</span>
+        </div>
+      </div>
+      <div class="contact-col">
+        <h5>Hubungi Panitia</h5>
+        <a href="https://wa.me/6285866573374" class="contact-link" target="_blank"><span class="cl-ico">📞</span><span>+62-858-6657-3374<br><small style="opacity:.6">M. Faqih Al Hafizi (Humas)</small></span></a>
+        <a href="https://wa.me/6285647163970" class="contact-link" target="_blank"><span class="cl-ico">📞</span><span>+62-856-4716-3970<br><small style="opacity:.6">Ahmad Raihan (Humas)</small></span></a>
+        <a href="mailto:humaslailatulwada@gmail.com" class="contact-link"><span class="cl-ico">✉️</span><span>humaslailatulwada@gmail.com</span></a>
+      </div>
+      <div class="contact-col">
+        <h5>Ikuti Kami</h5>
+        <a href="https://www.instagram.com/lailatulwada.official/" class="contact-link" target="_blank"><span class="cl-ico">📸</span><span>@lailatul.wada<br><small style="opacity:.6">Instagram Resmi Acara</small></span></a>
+        <a href="https://instagram.com/jhsia17.ofc" class="contact-link" target="_blank"><span class="cl-ico">📸</span><span>@jhsia17.ofc<br><small style="opacity:.6">Instagram JHSIA XVII</small></span></a>
+        <div style="margin-top:20px;padding:18px;background:rgba(47,232,154,.06);border:1px solid rgba(47,232,154,.15);border-radius:16px">
+          <p style="font-size:12.5px;color:var(--muted);line-height:1.75">Konfirmasi sponsorship &amp; negosiasi paket dapat dilakukan langsung via WhatsApp atau email. Tim kami siap merespons dalam 1×24 jam.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <span>© 2026 Lailatul Wada' · PPTQ Ibnu Abbas Klaten</span>
+      <em>"Uniting Hearts, Weaving History"</em>
+      <span>Made with ❤️ by Panitia Lailatul Wada' 2026</span>
+    </div>
+  </div>
+</section>
+
+<script>
+/* ── CURSOR ── */
+const dot=document.getElementById('cursorDot'),ring=document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'});
+(function animRing(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing)})();
+document.querySelectorAll('a,button,.pkg,.seg,.pillar,.fact-card,.benefit-card,.why-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{dot.style.width='16px';dot.style.height='16px';ring.style.width='56px';ring.style.height='56px';ring.style.borderColor='rgba(47,232,154,.7)'});
+  el.addEventListener('mouseleave',()=>{dot.style.width='8px';dot.style.height='8px';ring.style.width='36px';ring.style.height='36px';ring.style.borderColor='rgba(47,232,154,.5)'});
+});
+
+/* ── READ PROGRESS ── */
+window.addEventListener('scroll',()=>{
+  const prog=document.getElementById('readProgress');
+  const pct=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
+  prog.style.width=pct+'%';
+});
+
+/* ── PARTICLES ── */
+const canvas=document.getElementById('particleCanvas'),ctx=canvas.getContext('2d');
+let particles=[];
+function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight}
+resize();window.addEventListener('resize',resize);
+class P{
+  constructor(){this.reset()}
+  reset(){this.x=Math.random()*canvas.width;this.y=canvas.height+10;this.vx=(Math.random()-.5)*.7;this.vy=-(0.3+Math.random()*.9);this.size=.8+Math.random()*2;this.life=0;this.maxLife=160+Math.random()*220;this.color=Math.random()>.6?'#2fe89a':Math.random()>.5?'#f0d060':'#c0a8ff'}
+  update(){this.x+=this.vx;this.y+=this.vy;this.life++;if(this.life>this.maxLife)this.reset()}
+  draw(){const a=Math.sin((this.life/this.maxLife)*Math.PI)*.75;ctx.globalAlpha=a;ctx.fillStyle=this.color;ctx.beginPath();ctx.arc(this.x,this.y,this.size,0,Math.PI*2);ctx.fill()}
+}
+for(let i=0;i<60;i++){const p=new P;p.life=Math.random()*p.maxLife;particles.push(p)}
+(function animP(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(p=>{p.update();p.draw()});ctx.globalAlpha=1;requestAnimationFrame(animP)})();
+
+/* ── COUNTDOWN ── */
+function tick(){
+  const t=new Date('2026-06-11T19:00:00+07:00'),n=new Date(),d=t-n;
+  if(d<=0){['cdDays','cdHours','cdMins','cdSecs'].forEach(id=>document.getElementById(id).textContent='00');return}
+  document.getElementById('cdDays').textContent=String(Math.floor(d/864e5)).padStart(2,'0');
+  document.getElementById('cdHours').textContent=String(Math.floor((d%864e5)/36e5)).padStart(2,'0');
+  document.getElementById('cdMins').textContent=String(Math.floor((d%36e5)/6e4)).padStart(2,'0');
+  document.getElementById('cdSecs').textContent=String(Math.floor((d%6e4)/1e3)).padStart(2,'0');
+}
+tick();setInterval(tick,1000);
+
+/* ── INTERSECTION OBSERVER ── */
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.08});
+document.querySelectorAll('.fi').forEach(el=>io.observe(el));
+
+/* ── COUNTER ── */
+const co=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const el=e.target,target=parseInt(el.dataset.target);if(!target)return;let cur=0;const step=target/60;const t=setInterval(()=>{cur=Math.min(cur+step,target);el.textContent=Math.floor(cur)+(target===700?'+':target===19?'+':'');if(cur>=target)clearInterval(t)},25);co.unobserve(el)}})},{threshold:.5});
+document.querySelectorAll('[data-target]').forEach(el=>co.observe(el));
+
+/* ── NAVBAR ── */
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.style.background=window.scrollY>60?'rgba(4,10,9,.96)':'rgba(6,16,14,.82)'});
+
+/* ── MOBILE NAV ── */
+const burger=document.getElementById('navBurger'),menu=document.getElementById('navMenu');
+let mo=false;
+burger.addEventListener('click',()=>{mo=!mo;menu.style.cssText=mo?`display:flex;flex-direction:column;gap:4px;position:fixed;top:74px;left:0;right:0;background:rgba(4,10,9,.97);backdrop-filter:blur(24px);padding:20px 24px 32px;border-bottom:1px solid rgba(255,255,255,.06);z-index:499;`:''});
+
+/* ── PARALLAX ORBS ── */
+window.addEventListener('scroll',()=>{
+  const s=window.scrollY;
+  const o1=document.querySelector('.orb-1'),o2=document.querySelector('.orb-2');
+  if(o1)o1.style.transform=`translate(0,${s*.15}px)`;
+  if(o2)o2.style.transform=`translate(0,${-s*.1}px)`;
+});
+
+/* ── TILT ON HOVER for cards ── */
+document.querySelectorAll('.pkg,.pillar,.benefit-card').forEach(el=>{
+  el.addEventListener('mousemove',e=>{
+    const r=el.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-.5;
+    const y=(e.clientY-r.top)/r.height-.5;
+    el.style.transform=`translateY(-8px) perspective(600px) rotateY(${x*8}deg) rotateX(${-y*5}deg)`;
+  });
+  el.addEventListener('mouseleave',()=>{el.style.transform=''});
+});
+</script>
+</body>
+</html>
