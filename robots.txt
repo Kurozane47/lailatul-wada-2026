@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kurozane47.github.io/lailatul-wada-2026/sitemap.xml
