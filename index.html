@@ -937,84 +937,398 @@ section{padding:110px 24px;position:relative}
   </div>
 </section>
 
+```html
 <script>
-/* ── CURSOR ── */
-const dot=document.getElementById('cursorDot'),ring=document.getElementById('cursorRing');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'});
-(function animRing(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing)})();
-document.querySelectorAll('a,button,.pkg,.seg,.pillar,.fact-card,.benefit-card,.why-card').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{dot.style.width='16px';dot.style.height='16px';ring.style.width='56px';ring.style.height='56px';ring.style.borderColor='rgba(47,232,154,.7)'});
-  el.addEventListener('mouseleave',()=>{dot.style.width='8px';dot.style.height='8px';ring.style.width='36px';ring.style.height='36px';ring.style.borderColor='rgba(47,232,154,.5)'});
+/* =========================================================
+   1. CUSTOM CURSOR
+========================================================= */
+
+const dot = document.getElementById('cursorDot');
+const ring = document.getElementById('cursorRing');
+
+let mouseX = 0;
+let mouseY = 0;
+let ringX = 0;
+let ringY = 0;
+
+// Mengikuti pergerakan mouse
+document.addEventListener('mousemove', (event) => {
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+
+    dot.style.left = `${mouseX}px`;
+    dot.style.top = `${mouseY}px`;
 });
 
-/* ── READ PROGRESS ── */
-window.addEventListener('scroll',()=>{
-  const prog=document.getElementById('readProgress');
-  const pct=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
-  prog.style.width=pct+'%';
+// Animasi ring cursor
+(function animateRing() {
+    ringX += (mouseX - ringX) * 0.1;
+    ringY += (mouseY - ringY) * 0.1;
+
+    ring.style.left = `${ringX}px`;
+    ring.style.top = `${ringY}px`;
+
+    requestAnimationFrame(animateRing);
+})();
+
+// Efek hover cursor
+const hoverElements = document.querySelectorAll(
+    'a, button, .pkg, .seg, .pillar, .fact-card, .benefit-card, .why-card'
+);
+
+hoverElements.forEach((element) => {
+    element.addEventListener('mouseenter', () => {
+        dot.style.width = '16px';
+        dot.style.height = '16px';
+
+        ring.style.width = '56px';
+        ring.style.height = '56px';
+        ring.style.borderColor = 'rgba(47,232,154,.7)';
+    });
+
+    element.addEventListener('mouseleave', () => {
+        dot.style.width = '8px';
+        dot.style.height = '8px';
+
+        ring.style.width = '36px';
+        ring.style.height = '36px';
+        ring.style.borderColor = 'rgba(47,232,154,.5)';
+    });
 });
 
-/* ── PARTICLES ── */
-const canvas=document.getElementById('particleCanvas'),ctx=canvas.getContext('2d');
-let particles=[];
-function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight}
-resize();window.addEventListener('resize',resize);
-class P{
-  constructor(){this.reset()}
-  reset(){this.x=Math.random()*canvas.width;this.y=canvas.height+10;this.vx=(Math.random()-.5)*.7;this.vy=-(0.3+Math.random()*.9);this.size=.8+Math.random()*2;this.life=0;this.maxLife=160+Math.random()*220;this.color=Math.random()>.6?'#2fe89a':Math.random()>.5?'#f0d060':'#c0a8ff'}
-  update(){this.x+=this.vx;this.y+=this.vy;this.life++;if(this.life>this.maxLife)this.reset()}
-  draw(){const a=Math.sin((this.life/this.maxLife)*Math.PI)*.75;ctx.globalAlpha=a;ctx.fillStyle=this.color;ctx.beginPath();ctx.arc(this.x,this.y,this.size,0,Math.PI*2);ctx.fill()}
+
+/* =========================================================
+   2. READING PROGRESS BAR
+========================================================= */
+
+const progressBar = document.getElementById('readProgress');
+
+function updateReadProgress() {
+    const scrollTop = window.scrollY;
+    const documentHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+    const percentage = documentHeight > 0
+        ? (scrollTop / documentHeight) * 100
+        : 0;
+
+    progressBar.style.width = `${percentage}%`;
 }
-for(let i=0;i<60;i++){const p=new P;p.life=Math.random()*p.maxLife;particles.push(p)}
-(function animP(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(p=>{p.update();p.draw()});ctx.globalAlpha=1;requestAnimationFrame(animP)})();
 
-/* ── COUNTDOWN ── */
-function tick(){
-  const t=new Date('2026-06-11T19:00:00+07:00'),n=new Date(),d=t-n;
-  if(d<=0){['cdDays','cdHours','cdMins','cdSecs'].forEach(id=>document.getElementById(id).textContent='00');return}
-  document.getElementById('cdDays').textContent=String(Math.floor(d/864e5)).padStart(2,'0');
-  document.getElementById('cdHours').textContent=String(Math.floor((d%864e5)/36e5)).padStart(2,'0');
-  document.getElementById('cdMins').textContent=String(Math.floor((d%36e5)/6e4)).padStart(2,'0');
-  document.getElementById('cdSecs').textContent=String(Math.floor((d%6e4)/1e3)).padStart(2,'0');
+window.addEventListener('scroll', updateReadProgress);
+updateReadProgress();
+
+
+/* =========================================================
+   3. PARTICLE ANIMATION
+========================================================= */
+
+const canvas = document.getElementById('particleCanvas');
+const ctx = canvas.getContext('2d');
+
+let particles = [];
+
+// Menyesuaikan ukuran canvas
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 }
-tick();setInterval(tick,1000);
 
-/* ── INTERSECTION OBSERVER ── */
-const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.08});
-document.querySelectorAll('.fi').forEach(el=>io.observe(el));
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
 
-/* ── COUNTER ── */
-const co=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const el=e.target,target=parseInt(el.dataset.target);if(!target)return;let cur=0;const step=target/60;const t=setInterval(()=>{cur=Math.min(cur+step,target);el.textContent=Math.floor(cur)+(target===700?'+':target===19?'+':'');if(cur>=target)clearInterval(t)},25);co.unobserve(el)}})},{threshold:.5});
-document.querySelectorAll('[data-target]').forEach(el=>co.observe(el));
 
-/* ── NAVBAR ── */
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{nav.style.background=window.scrollY>60?'rgba(4,10,9,.96)':'rgba(6,16,14,.82)'});
+// Class particle
+class Particle {
+    constructor() {
+        this.reset();
+    }
 
-/* ── MOBILE NAV ── */
-const burger=document.getElementById('navBurger'),menu=document.getElementById('navMenu');
-let mo=false;
-burger.addEventListener('click',()=>{mo=!mo;menu.style.cssText=mo?`display:flex;flex-direction:column;gap:4px;position:fixed;top:74px;left:0;right:0;background:rgba(4,10,9,.97);backdrop-filter:blur(24px);padding:20px 24px 32px;border-bottom:1px solid rgba(255,255,255,.06);z-index:499;`:''});
+    reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = canvas.height + 10;
 
-/* ── PARALLAX ORBS ── */
-window.addEventListener('scroll',()=>{
-  const s=window.scrollY;
-  const o1=document.querySelector('.orb-1'),o2=document.querySelector('.orb-2');
-  if(o1)o1.style.transform=`translate(0,${s*.15}px)`;
-  if(o2)o2.style.transform=`translate(0,${-s*.1}px)`;
+        this.vx = (Math.random() - 0.5) * 0.7;
+        this.vy = -(0.3 + Math.random() * 0.9);
+
+        this.size = 0.8 + Math.random() * 2;
+
+        this.life = 0;
+        this.maxLife = 160 + Math.random() * 220;
+
+        this.color = Math.random() > 0.6
+            ? '#2fe89a'
+            : Math.random() > 0.5
+                ? '#f0d060'
+                : '#c0a8ff';
+    }
+
+    update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        this.life++;
+
+        if (this.life > this.maxLife) {
+            this.reset();
+        }
+    }
+
+    draw() {
+        const alpha =
+            Math.sin((this.life / this.maxLife) * Math.PI) * 0.75;
+
+        ctx.globalAlpha = alpha;
+        ctx.fillStyle = this.color;
+
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+    }
+}
+
+
+// Membuat 60 particle
+for (let i = 0; i < 60; i++) {
+    const particle = new Particle();
+
+    particle.life = Math.random() * particle.maxLife;
+
+    particles.push(particle);
+}
+
+
+// Animasi particle
+(function animateParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach((particle) => {
+        particle.update();
+        particle.draw();
+    });
+
+    ctx.globalAlpha = 1;
+
+    requestAnimationFrame(animateParticles);
+})();
+
+
+/* =========================================================
+   4. COUNTDOWN TIMER
+========================================================= */
+
+const countdownTarget = new Date('2026-06-11T19:00:00+07:00');
+
+function updateCountdown() {
+    const now = new Date();
+    const difference = countdownTarget - now;
+
+    const countdownElements = {
+        days: document.getElementById('cdDays'),
+        hours: document.getElementById('cdHours'),
+        minutes: document.getElementById('cdMins'),
+        seconds: document.getElementById('cdSecs')
+    };
+
+    // Jika waktu sudah berakhir
+    if (difference <= 0) {
+        Object.values(countdownElements).forEach((element) => {
+            element.textContent = '00';
+        });
+
+        return;
+    }
+
+    const days = Math.floor(difference / 86400000);
+    const hours = Math.floor((difference % 86400000) / 3600000);
+    const minutes = Math.floor((difference % 3600000) / 60000);
+    const seconds = Math.floor((difference % 60000) / 1000);
+
+    countdownElements.days.textContent = String(days).padStart(2, '0');
+    countdownElements.hours.textContent = String(hours).padStart(2, '0');
+    countdownElements.minutes.textContent = String(minutes).padStart(2, '0');
+    countdownElements.seconds.textContent = String(seconds).padStart(2, '0');
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+
+/* =========================================================
+   5. SCROLL REVEAL ANIMATION
+========================================================= */
+
+const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('on');
+
+                observer.unobserve(entry.target);
+            }
+        });
+    },
+    {
+        threshold: 0.08
+    }
+);
+
+// Mengamati semua elemen dengan class .fi
+document.querySelectorAll('.fi').forEach((element) => {
+    revealObserver.observe(element);
 });
 
-/* ── TILT ON HOVER for cards ── */
-document.querySelectorAll('.pkg,.pillar,.benefit-card').forEach(el=>{
-  el.addEventListener('mousemove',e=>{
-    const r=el.getBoundingClientRect();
-    const x=(e.clientX-r.left)/r.width-.5;
-    const y=(e.clientY-r.top)/r.height-.5;
-    el.style.transform=`translateY(-8px) perspective(600px) rotateY(${x*8}deg) rotateX(${-y*5}deg)`;
-  });
-  el.addEventListener('mouseleave',()=>{el.style.transform=''});
+
+/* =========================================================
+   6. ANIMATED COUNTER
+========================================================= */
+
+const counterObserver = new IntersectionObserver(
+    (entries, observer) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            const element = entry.target;
+            const target = parseInt(element.dataset.target, 10);
+
+            if (!target) return;
+
+            let current = 0;
+
+            const step = target / 60;
+
+            const counterInterval = setInterval(() => {
+                current = Math.min(current + step, target);
+
+                const suffix = [700, 19].includes(target) ? '+' : '';
+
+                element.textContent =
+                    `${Math.floor(current)}${suffix}`;
+
+                if (current >= target) {
+                    clearInterval(counterInterval);
+                }
+            }, 25);
+
+            observer.unobserve(element);
+        });
+    },
+    {
+        threshold: 0.5
+    }
+);
+
+// Mengamati semua elemen counter
+document.querySelectorAll('[data-target]').forEach((element) => {
+    counterObserver.observe(element);
 });
+
+
+/* =========================================================
+   7. NAVBAR SCROLL EFFECT
+========================================================= */
+
+const navbar = document.getElementById('nav');
+
+function updateNavbar() {
+    navbar.style.background = window.scrollY > 60
+        ? 'rgba(4,10,9,.96)'
+        : 'rgba(6,16,14,.82)';
+}
+
+window.addEventListener('scroll', updateNavbar);
+updateNavbar();
+
+
+/* =========================================================
+   8. MOBILE NAVIGATION
+========================================================= */
+
+const burger = document.getElementById('navBurger');
+const menu = document.getElementById('navMenu');
+
+let isMenuOpen = false;
+
+burger.addEventListener('click', () => {
+    isMenuOpen = !isMenuOpen;
+
+    if (isMenuOpen) {
+        menu.style.cssText = `
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            position: fixed;
+            top: 74px;
+            left: 0;
+            right: 0;
+            background: rgba(4,10,9,.97);
+            backdrop-filter: blur(24px);
+            padding: 20px 24px 32px;
+            border-bottom: 1px solid rgba(255,255,255,.06);
+            z-index: 499;
+        `;
+    } else {
+        menu.style.cssText = '';
+    }
+});
+
+
+/* =========================================================
+   9. PARALLAX ORBS
+========================================================= */
+
+const orb1 = document.querySelector('.orb-1');
+const orb2 = document.querySelector('.orb-2');
+
+function updateParallax() {
+    const scrollPosition = window.scrollY;
+
+    if (orb1) {
+        orb1.style.transform =
+            `translate(0, ${scrollPosition * 0.15}px)`;
+    }
+
+    if (orb2) {
+        orb2.style.transform =
+            `translate(0, ${-scrollPosition * 0.1}px)`;
+    }
+}
+
+window.addEventListener('scroll', updateParallax);
+
+
+/* =========================================================
+   10. 3D CARD TILT EFFECT
+========================================================= */
+
+const tiltCards = document.querySelectorAll(
+    '.pkg, .pillar, .benefit-card'
+);
+
+tiltCards.forEach((card) => {
+
+    // Efek tilt saat mouse bergerak
+    card.addEventListener('mousemove', (event) => {
+        const rect = card.getBoundingClientRect();
+
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+        card.style.transform = `
+            translateY(-8px)
+            perspective(600px)
+            rotateY(${x * 8}deg)
+            rotateX(${-y * 5}deg)
+        `;
+    });
+
+    // Reset transform saat mouse keluar
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+    });
+});
+
 </script>
 </body>
 </html>
+```
